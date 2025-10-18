@@ -12,10 +12,15 @@ urls = { homepage = "https://github.com/CursorTouch" }
 keywords = ["windows", "agent", "ai", "desktop","ai agent","automation"]
 requires-python = ">=3.12"
 dependencies = [
+    # Core agent framework
     "fuzzywuzzy>=0.18.0",
     "humancursor>=1.1.5",
     "langchain>=0.3.25",
     "langchain-community>=0.3.25",
+    "langchain-google-genai>=2.0.0",
+    "langchain-openai>=0.1.0",
+    "langchain-ollama>=0.1.0",
+    "langchain-cerebras>=0.1.0",
     "markdownify>=1.1.0",
     "pillow>=11.2.1",
     "pyautogui>=0.9.54",
@@ -26,6 +31,34 @@ dependencies = [
     "termcolor>=3.1.0",
     "twine>=6.1.0",
     "uiautomation>=2.0.28",
+    
+    # Desktop GUI
+    "customtkinter>=5.2.0",
+    
+    # Voice input (optional but included)
+    "SpeechRecognition>=3.10.0",
+    "sounddevice>=0.4.6",
+    "numpy>=1.24.0",
+    
+    # Clipboard and automation
+    "pyperclip>=1.8.2",
+    
+    # Environment management
+    "python-dotenv>=1.0.0",
+    
+    # Advanced Features - Workflow Engine
+    "watchdog>=3.0.0",
+    "schedule>=1.2.0",
+    
+    # Advanced Features - Context Manager
+    "psutil>=5.9.0",
+    "pywin32>=306; platform_system == 'Windows'",
+    
+    # Advanced Features - Security Manager
+    "cryptography>=41.0.0",
+    
+    # Advanced Features - Integration Manager
+    # requests already included above
 ]
 
 [build-system]

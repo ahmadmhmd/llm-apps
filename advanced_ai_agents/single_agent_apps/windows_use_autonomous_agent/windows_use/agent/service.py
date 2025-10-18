@@ -1,4 +1,11 @@
-from windows_use.agent.tools.service import click_tool, type_tool, launch_tool, shell_tool, clipboard_tool, done_tool, shortcut_tool, scroll_tool, drag_tool, move_tool, key_tool, wait_tool, scrape_tool 
+from windows_use.agent.tools.service import (
+    click_tool, type_tool, launch_tool, shell_tool, clipboard_tool, done_tool, 
+    shortcut_tool, scroll_tool, drag_tool, move_tool, key_tool, wait_tool, 
+    scrape_tool, screenshot_tool, calculate_tool, write_file_tool, read_file_tool,
+    search_web_tool, open_url_tool, system_info_tool, file_operation_tool,
+    text_to_speech_tool, reminder_tool, weather_info_tool, translate_text_tool,
+    memory_operation_tool, ocr_tool, pdf_operation_tool
+) 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from windows_use.agent.views import AgentState, AgentStep, AgentResult
 from windows_use.agent.utils import extract_agent_data, image_message
@@ -38,9 +45,20 @@ class Agent:
         self.name='Windows Use'
         self.description='An agent that can interact with GUI elements on Windows' 
         self.registry = Registry([
-            click_tool,type_tool, launch_tool, shell_tool, clipboard_tool,
+            # Core GUI Tools
+            click_tool, type_tool, launch_tool, shell_tool, clipboard_tool,
             done_tool, shortcut_tool, scroll_tool, drag_tool, move_tool,
-            key_tool, wait_tool, scrape_tool
+            key_tool, wait_tool,
+            # Productivity Tools
+            screenshot_tool, calculate_tool, write_file_tool, read_file_tool,
+            # Web & Communication
+            search_web_tool, open_url_tool, scrape_tool,
+            # System & File Management
+            system_info_tool, file_operation_tool,
+            # Advanced Features
+            text_to_speech_tool, reminder_tool, weather_info_tool, translate_text_tool,
+            # Intelligence Layer
+            memory_operation_tool, ocr_tool, pdf_operation_tool
         ] + additional_tools)
         self.instructions=instructions
         self.desktop = Desktop()
